@@ -18,7 +18,6 @@ public class BotMain {
 			@SuppressWarnings("unused")
 			Bot bot = new Bot(token);
 		} catch (LoginException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

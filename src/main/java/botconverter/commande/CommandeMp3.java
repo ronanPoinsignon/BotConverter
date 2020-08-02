@@ -16,7 +16,7 @@ import prog.video.Video;
 
 public class CommandeMp3 extends ListenerAdapter {
 
-	public static final File VIDEO_FOLDER = new File("C:\\Users\\ronan\\Desktop\\ronan\\testMp4");
+	public static final File VIDEO_FOLDER = new File("./botFolder");
 	public static final int BIT_RATE = 800000;
 
 	@Override
@@ -76,7 +76,7 @@ public class CommandeMp3 extends ListenerAdapter {
 				for(String lien : listeUrlsErreur)
 					str.append("\n\t- " + lien);
 				embed.setDescription(str.toString());
-				event.getChannel().sendMessage(embed.build()).queue();;
+				event.getChannel().sendMessage(embed.build()).queue();
 			}
 		}
 	}
