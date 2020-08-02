@@ -60,12 +60,6 @@ public class TacheConvertirToFile {
 				listeMauvaisFichiers.add(video);
 			}
 		}
-		try {
-			if(!hasMp4)
-				Utils.deleteFile(folderMp4);
-		} catch (IOException e) {
-			//TODO
-		}
 		return listeFichiers;
 	}
 	

@@ -17,13 +17,13 @@ import prog.video.Video;
 public class CommandeMp3 extends ListenerAdapter {
 
 	public static final File VIDEO_FOLDER = new File(".\\botFolder");
-	public static final int BIT_RATE = 800000;
+	public static final int BIT_RATE = 320000;
 
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-		System.out.println("PATH : " + VIDEO_FOLDER.getPath());
 		String[] args = event.getMessage().getContentRaw().split("\\s+");
-		if(args[0].equals(Bot.PREFIX + "mp3")) {
+		System.out.println("PATH : " + VIDEO_FOLDER.getAbsolutePath());
+		/*if(args[0].equals(Bot.PREFIX + "mp3")) {
 			if(args.length != 2) {
 				EmbedBuilder embed = new EmbedBuilder();
 				embed.setTitle("Erreur dans la commande");
@@ -79,7 +79,7 @@ public class CommandeMp3 extends ListenerAdapter {
 				embed.setDescription(str.toString());
 				event.getChannel().sendMessage(embed.build()).queue();
 			}
-		}
+		}*/
 	}
 	
 }
