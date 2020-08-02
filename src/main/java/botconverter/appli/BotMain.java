@@ -6,7 +6,7 @@ import botconverter.bot.Bot;
 
 public class BotMain {
 	
-	private static String token = "";
+	private static String token = System.getenv("TOKEN");
 
 	public static void main(String[] args) {
 		BotMain bot = new BotMain();
