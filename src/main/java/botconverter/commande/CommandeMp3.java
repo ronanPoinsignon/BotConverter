@@ -16,7 +16,7 @@ import prog.video.Video;
 
 public class CommandeMp3 extends ListenerAdapter {
 
-	public static final File VIDEO_FOLDER = new File("/botFolder");
+	public static final File VIDEO_FOLDER = new File(".\\botFolder");
 	public static final int BIT_RATE = 800000;
 
 	@Override
