@@ -21,6 +21,7 @@ public class CommandeMp3 extends ListenerAdapter {
 
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
+		System.out.println("PATH : " + VIDEO_FOLDER.getPath());
 		String[] args = event.getMessage().getContentRaw().split("\\s+");
 		if(args[0].equals(Bot.PREFIX + "mp3")) {
 			if(args.length != 2) {
