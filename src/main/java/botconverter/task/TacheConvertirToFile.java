@@ -1,7 +1,6 @@
 package botconverter.task;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,10 +47,6 @@ public class TacheConvertirToFile {
 		}
 		for(Video video : listeVideos) {
 			try {
-				System.out.println("video : " + video);
-				System.out.println("folder : " + folder);
-				System.out.println("folderMp4 : " + folderMp4);
-				System.out.println("hasMp4 : " + hasMp4);
 				listeFichiers.add(this.convertVideo(video, folder, folderMp4, hasMp4));
 			}
 			catch(EncoderException e) {

@@ -72,13 +72,12 @@ public class Utils {
 	    return newTitle.toString();
 	}
 	
-
-	
 	public static void deleteFile(File folder) throws IOException {
 		Files.walk(folder.toPath())
 			.sorted(Comparator.reverseOrder())
 			.map(Path::toFile)
 			.forEach(File::delete);
+		folder.delete();
 	}
 	
 }

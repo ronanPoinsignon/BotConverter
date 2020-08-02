@@ -16,7 +16,7 @@ import prog.video.Video;
 
 public class CommandeMp3 extends ListenerAdapter {
 
-	public static final File VIDEO_FOLDER = new File(".\\botFolder");
+	public static final File BOT_FOLDER = new File(".\\botFolder");
 	public static final int BIT_RATE = 320000;
 
 	@Override
@@ -33,7 +33,7 @@ public class CommandeMp3 extends ListenerAdapter {
 			String url = args[1];
 			List<String> listeExtensions = new ArrayList<>();
 			listeExtensions.add("mp3");
-			TacheConvertirInstant tache = new TacheConvertirInstant(url, VIDEO_FOLDER, BIT_RATE, listeExtensions);
+			TacheConvertirInstant tache = new TacheConvertirInstant(url, BOT_FOLDER, BIT_RATE, listeExtensions);
 			List<File> listeMp3 = tache.convertir();
 			List<Video> listeMauvaisesVideos = tache.getListeMauvaisesVideos();
 			List<String> listeMauvaisLiens = tache.getListeMauvaisLiens();
@@ -43,7 +43,7 @@ public class CommandeMp3 extends ListenerAdapter {
 			if(!listeMp3.isEmpty())
 				event.getChannel().sendFile(listeMp3.get(0)).queue();
 			try {
-				Utils.deleteFile(VIDEO_FOLDER);
+				Utils.deleteFile(BOT_FOLDER);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
