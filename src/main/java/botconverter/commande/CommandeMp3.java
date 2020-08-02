@@ -22,8 +22,7 @@ public class CommandeMp3 extends ListenerAdapter {
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 		String[] args = event.getMessage().getContentRaw().split("\\s+");
-		System.out.println("PATH : " + VIDEO_FOLDER.getAbsolutePath());
-		/*if(args[0].equals(Bot.PREFIX + "mp3")) {
+		if(args[0].equals(Bot.PREFIX + "mp3")) {
 			if(args.length != 2) {
 				EmbedBuilder embed = new EmbedBuilder();
 				embed.setTitle("Erreur dans la commande");
@@ -79,7 +78,7 @@ public class CommandeMp3 extends ListenerAdapter {
 				embed.setDescription(str.toString());
 				event.getChannel().sendMessage(embed.build()).queue();
 			}
-		}*/
+		}
 	}
 	
 }
