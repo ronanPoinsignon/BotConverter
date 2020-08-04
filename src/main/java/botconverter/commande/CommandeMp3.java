@@ -38,7 +38,13 @@ public class CommandeMp3 extends ListenerAdapter {
 			List<String> listeUrlsErreur = tache.getListeUrlsErreur();
 			
 			if(!listeMp3.isEmpty()) {
-				event.getChannel().sendFile(listeMp3.get(0)).queue();
+				try {
+					event.getChannel().sendFile(listeMp3.get(0)).queue();
+				}
+				catch(IllegalArgumentException e) {
+					System.out.println(e.getMessage());
+					System.out.println(listeMp3.get(0).length());
+				}
 			}
 			
 			for(File fichier : listeMp3) {
