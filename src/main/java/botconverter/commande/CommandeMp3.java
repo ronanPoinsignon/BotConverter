@@ -32,7 +32,7 @@ public class CommandeMp3 extends ListenerAdapter {
 						if(args.length > 2)
 							embed.setDescription("La commande ne doit avoir qu'un paramètre\nex : ex : " + Bot.PREFIX + "mp3 https://www.youtube.com/watch?v=hT_nvWreIhg");
 						else
-							embed.setDescription("La commande doit avoir un paramètre\\nex : ex : " + Bot.PREFIX + "mp3 https://www.youtube.com/watch?v=hT_nvWreIhg");
+							embed.setDescription("La commande doit avoir un paramètre\nex : " + Bot.PREFIX + "mp3 https://www.youtube.com/watch?v=hT_nvWreIhg");
 						event.getChannel().sendMessage(embed.build()).queue();
 						return;
 					}
