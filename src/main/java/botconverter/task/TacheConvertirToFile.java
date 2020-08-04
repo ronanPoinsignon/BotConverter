@@ -1,7 +1,6 @@
 package botconverter.task;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +41,12 @@ public class TacheConvertirToFile {
 		hasMp4 = listeExtensions.contains("mp4");
 		File folderMp4 = null;
 		folderMp4 = new File(folder.getPath() + "\\mp4Bot");
-		folderMp4.mkdirs();
+		try {
+			folderMp4.mkdirs();
+		}
+		catch(SecurityException e) {
+			e.printStackTrace();
+		}
 		if(hasMp4) {
 			listeExtensions.remove("mp4");
 		}
@@ -82,7 +86,12 @@ public class TacheConvertirToFile {
 		for(String extension : listeExtensions) {
 			File folderVideo = new File(folder + "\\" + extension.toLowerCase());
 			if(!folderVideo.exists())
+				try {
 				folderVideo.mkdirs();
+				}
+			catch(SecurityException e) {
+				e.printStackTrace();
+			}
 			fichier = new File(folderVideo.getPath() + "\\" + titre + "." + extension.toLowerCase());
 			fichier = convertisseur.convertir(fichierMp4, fichier);
 		}
