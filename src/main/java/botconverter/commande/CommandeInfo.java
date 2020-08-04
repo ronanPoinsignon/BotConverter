@@ -1,5 +1,7 @@
 package botconverter.commande;
 
+import java.awt.Color;
+
 import botconverter.bot.Bot;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -21,6 +23,7 @@ public class CommandeInfo extends ListenerAdapter {
 							+ Bot.PREFIX + "info", false);
 					embed.addField("Commande mp3", "Convertit une vidéo Youtube en fichier mp3.\nex : " 
 							+ Bot.PREFIX + "mp3 https://www.youtube.com/watch?v=hT_nvWreIhg", false);
+					embed.setColor(Color.BLUE);
 					event.getChannel().sendMessage(embed.build()).queue();
 					try {
 						Thread.currentThread().interrupt();

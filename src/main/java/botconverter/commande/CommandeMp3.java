@@ -51,8 +51,11 @@ public class CommandeMp3 extends ListenerAdapter {
 								EmbedBuilder embed = new EmbedBuilder();
 								embed.setTitle("Fichier trop volumineux");
 								embed.setDescription("Le fichier est trop important pour être envoyé (taille du fichier : " + listeMp3.get(0).length()/1000 + "Mo");
+								embed.setColor(Color.RED);
 								event.getChannel().sendMessage(embed.build()).queue();
 							}
+							else
+								e.printStackTrace();
 						}
 					}
 					
