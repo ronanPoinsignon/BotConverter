@@ -37,12 +37,13 @@ public class CommandeMp3 extends ListenerAdapter {
 			List<String> listeMauvaisLiens = tache.getListeMauvaisLiens();
 			List<String> listeUrlsErreur = tache.getListeUrlsErreur();
 			
+			if(!listeMp3.isEmpty()) {
+				event.getChannel().sendFile(listeMp3.get(0)).queue();
+			}
+			
 			for(File fichier : listeMp3) {
 				fichier.delete();
 			}
-			
-			if(!listeMp3.isEmpty())
-				event.getChannel().sendFile(listeMp3.get(0)).queue();
 			
 			if(!listeMauvaisesVideos.isEmpty()) {
 				EmbedBuilder embed = new EmbedBuilder();
