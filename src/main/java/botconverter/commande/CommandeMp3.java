@@ -29,7 +29,10 @@ public class CommandeMp3 extends ListenerAdapter {
 						EmbedBuilder embed = new EmbedBuilder();
 						embed.setTitle("Erreur dans la commande");
 						embed.setColor(Color.RED);
-						embed.setDescription("la commande ne doit avoir qu'un paramètre ");
+						if(args.length > 2)
+							embed.setDescription("La commande ne doit avoir qu'un paramètre\nex : ex : " + Bot.PREFIX + "mp3 https://www.youtube.com/watch?v=hT_nvWreIhg");
+						else
+							embed.setDescription("La commande doit avoir un paramètre\\nex : ex : \" + Bot.PREFIX + \"mp3 https://www.youtube.com/watch?v=hT_nvWreIhg");
 						event.getChannel().sendMessage(embed.build()).queue();
 						return;
 					}
@@ -50,7 +53,7 @@ public class CommandeMp3 extends ListenerAdapter {
 							if(e.getMessage().startsWith("File may not exceed the maximum file length")) {
 								EmbedBuilder embed = new EmbedBuilder();
 								embed.setTitle("Fichier trop volumineux");
-								embed.setDescription("Le fichier est trop important pour être envoyé (taille du fichier : " + listeMp3.get(0).length()/1000 + "Mo");
+								embed.setDescription("Le fichier est trop important pour être envoyé (taille du fichier : " + listeMp3.get(0).length()/1000 + "Mo)");
 								embed.setColor(Color.RED);
 								event.getChannel().sendMessage(embed.build()).queue();
 							}
