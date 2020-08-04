@@ -40,7 +40,8 @@ public class TacheConvertirToFile {
 		}
 		hasMp4 = listeExtensions.contains("mp4");
 		File folderMp4 = null;
-		folderMp4 = new File(folder.getPath() + "\\mp4Bot");
+		//folderMp4 = new File(folder.getPath() + "\\mp4Bot");
+		folderMp4 = folder;
 		try {
 			folderMp4.mkdirs();
 		}
@@ -84,7 +85,8 @@ public class TacheConvertirToFile {
 		String titre = Utils.getVideoTitleWithoutIllegalChar(video.getTitre());
 		ConvertisseurMusique convertisseur = new ConvertisseurMusique(80000);
 		for(String extension : listeExtensions) {
-			File folderVideo = new File(folder + "\\" + extension.toLowerCase());
+			//File folderVideo = new File(folder + "\\" + extension.toLowerCase());
+			File folderVideo = folder;
 			if(!folderVideo.exists())
 				try {
 				folderVideo.mkdirs();

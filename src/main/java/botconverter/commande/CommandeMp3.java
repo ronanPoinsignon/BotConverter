@@ -2,11 +2,9 @@ package botconverter.commande;
 
 import java.awt.Color;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import botconverter.Utils;
 import botconverter.bot.Bot;
 import botconverter.task.TacheConvertirInstant;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -16,7 +14,7 @@ import prog.video.Video;
 
 public class CommandeMp3 extends ListenerAdapter {
 
-	public static final File BOT_FOLDER = new File(".\\botFolder");
+	public static final File BOT_FOLDER = new File("./");
 	public static final int BIT_RATE = 320000;
 
 	@Override
@@ -39,14 +37,12 @@ public class CommandeMp3 extends ListenerAdapter {
 			List<String> listeMauvaisLiens = tache.getListeMauvaisLiens();
 			List<String> listeUrlsErreur = tache.getListeUrlsErreur();
 			
-
+			for(File fichier : listeMp3) {
+				fichier.delete();
+			}
+			
 			if(!listeMp3.isEmpty())
 				event.getChannel().sendFile(listeMp3.get(0)).queue();
-			try {
-				Utils.deleteFile(BOT_FOLDER);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			
 			if(!listeMauvaisesVideos.isEmpty()) {
 				EmbedBuilder embed = new EmbedBuilder();
@@ -58,6 +54,7 @@ public class CommandeMp3 extends ListenerAdapter {
 				embed.setDescription(str.toString());
 				event.getChannel().sendMessage(embed.build()).queue();
 			}
+			
 			if(!listeMauvaisLiens.isEmpty()) {
 				EmbedBuilder embed = new EmbedBuilder();
 				embed.setTitle("Lien(s) non valide(s)");
@@ -68,6 +65,7 @@ public class CommandeMp3 extends ListenerAdapter {
 				embed.setDescription(str.toString());
 				event.getChannel().sendMessage(embed.build()).queue();;
 			}
+			
 			if(!listeUrlsErreur.isEmpty()) {
 				EmbedBuilder embed = new EmbedBuilder();
 				embed.setTitle("Lien(s) non valide(s)");

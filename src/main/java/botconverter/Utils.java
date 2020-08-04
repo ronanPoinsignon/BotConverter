@@ -77,7 +77,7 @@ public class Utils {
 			.sorted(Comparator.reverseOrder())
 			.map(Path::toFile)
 			.forEach(File::delete);
-		folder.delete();
+			folder.delete();
 	}
 	
 }
