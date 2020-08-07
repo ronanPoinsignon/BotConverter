@@ -20,7 +20,7 @@ public class Bot {
 			.addEventListeners(new CommandeMp3())
 			.build();
 		jda.getPresence().setStatus(OnlineStatus.ONLINE);
-		jda.getPresence().setActivity(Activity.playing(";info"));
+		jda.getPresence().setActivity(Activity.playing(Bot.PREFIX + "info"));
 	}
 	
 }

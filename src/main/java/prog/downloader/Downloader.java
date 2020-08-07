@@ -16,7 +16,7 @@ import com.github.kiulian.downloader.model.formats.AudioVideoFormat;
 import com.github.kiulian.downloader.model.formats.Format;
 import com.github.kiulian.downloader.model.quality.VideoQuality;
 
-import botconverter.Utils;
+import prog.Utils;
 
 /**
  * Classe permettant le téléchargement de vidéos Youtube.
