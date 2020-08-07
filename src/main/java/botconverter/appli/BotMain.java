@@ -15,6 +15,7 @@ public class BotMain {
 	
 	public void lancer() {
 		try {
+			System.out.println(System.getProperty("file.encoding"));
 			@SuppressWarnings("unused")
 			Bot bot = new Bot(token);
 		} catch (LoginException e) {
