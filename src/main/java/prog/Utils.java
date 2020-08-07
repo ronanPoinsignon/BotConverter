@@ -69,7 +69,7 @@ public class Utils {
 	        	newTitle.append((char)c);
 	        }
 	    }
-	    return newTitle.toString().replaceAll("(", "[").replaceAll(")", "]");
+	    return newTitle.toString().replaceAll("\\(", "[").replaceAll("\\)", "]");
 	}
 	
 	public static void deleteFile(File folder) throws IOException {
