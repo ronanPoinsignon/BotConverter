@@ -94,7 +94,7 @@ public class TacheConvertirToFile {
 			catch(SecurityException e) {
 				e.printStackTrace();
 			}
-			fichier = new File(folderVideo.getPath() + "\\" + titre + "." + extension.toLowerCase());
+			fichier = new File(folderVideo.getPath() + "\\" + "\"" + titre + "." + extension.toLowerCase() + "\"");
 			fichier = convertisseur.convertir(fichierMp4, fichier);
 		}
 		return fichier;
