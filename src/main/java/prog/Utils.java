@@ -30,10 +30,15 @@ public class Utils {
 		if(query.split("\\?").length < 2)
 			return map;
 		String[] params = query.split("\\?")[1].split("&");  
-	    for (String param : params) {  
-	        String name = param.split("=")[0];  
-	        String value = param.split("=")[1];  
-	        map.put(name, value);  
+	    for (String param : params) {
+	    	try {
+		        String name = param.split("=")[0];  
+		        String value = param.split("=")[1];  
+		        map.put(name, value);
+	    	}
+	    	catch(ArrayIndexOutOfBoundsException e) {
+	    		
+	    	}
 	    }  
 	    return map;  
 	}
